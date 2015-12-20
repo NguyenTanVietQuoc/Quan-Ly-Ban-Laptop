@@ -1,0 +1,81 @@
+﻿@using StoreLaptop.ServiceReference;
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Layout/LayoutNguoiDung.cshtml";
+}
+@section Slider{}
+<h2>Giỏ Hàng</h2>
+<div class="container">
+    <div class="table-responsive cart_info">
+        
+        <table class="table table-condensed" style="width:70%">
+            <thead>
+                <tr class="cart_menu">
+                    <td class="image">Ảnh</td>
+                    <td class="description" style="padding-left:30px">Tên Sản Phẩm</td>
+                    <td class="price"> Đơn Giá</td>
+                    <td class="quantity">Số Lượng</td>
+                    <td class="total">Thành Tiền</td>
+                    @*<td></td>*@
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="a" style="margin-left:0;padding-left:0;">
+                            <a href=""><img src="@Url.Content("~/AnhSP/"+ @item.sHinh)" width="70" height="50" alt=""></a>
+                        </td>
+                        <td class="cart_description" style="padding-left:30px">
+                            <h4><a href="">@item.sTenSP</a></h4>
+                        </td>
+                        <td class="cart_price">
+                            <p>@String.Format("{0:0,0}", item.sGia) VNĐ</p>
+                        </td>
+                        <td class="cart_quantity">
+                            <div class="cart_quantity_button" style="text-align:center">
+                                <h5>@item.sSoLuong</h5>
+                            </div>
+                        </td>
+                        <td class="cart_total">
+                            <p class="cart_total_price">@String.Format("{0:0,0}", item.ThanhTien) VNĐ</p>
+                        </td>
+
+                    </tr>
+                }
+                <tr>
+                    <td colspan="4" style="text-align:right">Tổng Tiền :</td> 
+                    <td>@String.Format("{0:0,0}", @ViewBag.TongTien) VNĐ</td>                                        
+                </tr>
+                <tr>
+                    <td colspan="6" style="text-align:right;padding-right:10%">
+                        @{
+                            if(Session["taikhoan"]== null)
+                            { 
+                                ViewBag.dc = Url.Action("DangNhap","NguoiDung");
+                            }
+                            else{
+                            ViewBag.dc= Url.Action("TTDatHang","TTDatHang");} }
+                            <button type="button" style="float:right" class="btn btn-default" ><a href="@ViewBag.dc">Đặt Hàng</a></button>
+                        
+                        <button type="button" class="btn btn-default"><a href="@Url.Action("SuaGioHang","Giohang")">Chỉnh Sửa</a></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .cart_menu{
+        background-color:#428BCA;
+        color:#fff;
+    }
+    .cart_menu td{
+        border:solid 1px #fff;
+    }
+   .cart_description,.cart_price,.cart_quantity,.cart_total,.a,td{
+       border:solid 1px #428BCA;
+   }
+ 
+</style>

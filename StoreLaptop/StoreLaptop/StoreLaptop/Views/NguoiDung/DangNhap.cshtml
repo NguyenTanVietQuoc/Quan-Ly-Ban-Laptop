@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Layout/LayoutNguoiDung.cshtml";
+}
+@section Slider{}
+
+<h2>Đăng Nhập</h2>
+<h4 style="color:red">@ViewBag.thongbao</h4>
+@using (Html.BeginForm())
+{
+    <span>Email</span><br />
+    @Html.TextBox("txtemail")<br />
+    <span>Mật Khẩu</span><br />
+    <input type="password" name="txtpass" /><br /><br />
+    <input type="submit" class="btn btn-default" name="btnsm" />
+}
+<script>
+    
+</script>

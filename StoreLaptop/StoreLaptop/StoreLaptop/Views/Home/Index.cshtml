@@ -1,0 +1,59 @@
+﻿@using StoreLaptop.ServiceReference;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/LayoutNguoiDung.cshtml";
+}
+@section Slider{
+    <ol class="carousel-indicators">
+        <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#slider-carousel" data-slide-to="1"></li>
+        <li data-target="#slider-carousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item">                   
+                <img src="~/AnhSP/banner3.png" class="girl img-responsive" alt="" style="height:450px;width:100%;">
+                          
+        </div>
+
+        <div class="item active">
+            
+            <img src="~/AnhSP/banner4.png" class="girl img-responsive" alt="" style="height:450px;width:100%;">
+                
+            
+        </div>        
+        <div class="item">                      
+            <img src="~/AnhSP/banner5.png" class="girl img-responsive" alt="" style="height:450px;width:100%;">
+                         
+        </div>
+    </div>
+    <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+        <i class="fa fa-angle-left"></i>
+    </a>
+    <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+        <i class="fa fa-angle-right"></i>
+    </a>
+}
+<h2 class="title text-center" style="padding:5px">Sản Phẩm Nổi Bật</h2>
+
+
+@foreach (var item in ViewBag.index)
+{
+    var gia = item.Gia;
+    var thu = String.Format("{0:0,0}", gia);
+    <div class="col-sm-4">
+        <div class="product-image-wrapper">
+
+            <div class="single-products">
+                <div class="productinfo text-center">
+                    <img src="~/AnhSP/@item.Hinh" />
+                    <h2>@thu VNĐ</h2>
+                    <p>@item.TenSP</p>
+                    <a href="@Url.Action("XemChiTiet","SanPham", new { @idSP=item.idSP})" id="btncart" class="btn btn-default add-to-cart"><i class="fa fa-hand-o-right"></i>Xem Chi Tiết</a>
+                    <a href="@Url.Action("ThemGioHangs", "Giohang", new { @sidSP = item.idSP, @strUrl = Request.Url.ToString() })" id="btncart" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

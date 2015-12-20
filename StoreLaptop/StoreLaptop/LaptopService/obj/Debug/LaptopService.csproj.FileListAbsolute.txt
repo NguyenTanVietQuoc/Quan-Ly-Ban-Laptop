@@ -1,0 +1,11 @@
+e:\Projects2\StoreLaptop\LaptopService\bin\LaptopService.dll.config
+e:\Projects2\StoreLaptop\LaptopService\bin\LaptopService.dll
+e:\Projects2\StoreLaptop\LaptopService\bin\LaptopService.pdb
+e:\Projects2\StoreLaptop\LaptopService\obj\Debug\LaptopService.dll
+e:\Projects2\StoreLaptop\LaptopService\obj\Debug\LaptopService.pdb
+E:\Projects2\StoreLaptop\LaptopService\obj\Debug\LaptopService.csprojResolveAssemblyReference.cache
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\LaptopService\bin\LaptopService.dll.config
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\LaptopService\bin\LaptopService.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\LaptopService\bin\LaptopService.pdb
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\LaptopService\obj\Debug\LaptopService.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\LaptopService\obj\Debug\LaptopService.pdb

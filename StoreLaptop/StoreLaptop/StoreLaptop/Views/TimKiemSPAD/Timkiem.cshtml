@@ -1,0 +1,97 @@
+﻿@using StoreLaptop.ServiceReference;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.PagedList<SanPham>
+@{
+    ViewBag.Title = "Tìm kiếm";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+    var stt = 0;
+}
+
+@using (Html.BeginForm("Timkiem", "TimKiemSPAD"))
+{
+    <input type="text" name="TuKhoa" placeholder="Nhập từ khóa bạn tìm" value="@ViewBag.tukhoa" autofocus/>
+    <a href="#" onclick="$('#sm').click()"><img src="~/Content/admin/img/Image-Search.png" style="height:30px !important" align="absmiddle" /></a>
+    <input type="submit" value="Tìm kiếm" id="sm" style="display:none" />
+}
+<table align="center">
+    <tr id="tr_1">
+        <th width="30">STT</th>
+        <th width="120">Tên Sản phẩm</th>
+
+        <th width="100" align="center">Giá</th>
+        <th width="100" align="center">Ngày đăng</th>
+        <th>Mô tả</th>
+        <th width="100" align="center">Hình</th>
+        <th width="50" align="center">Tồn kho</th>
+        <th width="50" align="center">Số lần mua</th>
+        <th width="50" align="center">Số lần xem</th>
+        <th width="50" align="center">Ẩn hiên</th>
+        <th><a href="@Url.Action("ThemMoi","QuanLySP")">Thêm</a></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            @{stt++; ViewBag.stt = stt;}
+        <th align="center">@ViewBag.stt</th>
+        <td>@item.TenSP</td>
+
+        <td align="center">@item.Gia</td>
+        <td>@item.NgayDang</td>
+        <td>@item.MoTa</td>
+        <td align="center"><img src="~/AnhSP/@item.Hinh" width="100" /></td>
+        <td align="center">@item.TonKho</td>
+        <td align="center">@item.SoLanMua</td>
+        <td align="center">@item.SoLanXem</td>
+        <td align="center">@if (item.AnHien == 1) { ViewBag.anhien = "Hiện"; } else { ViewBag.anhien = "Ẩn"; }@ViewBag.anhien</td>
+        <th><a href="@Url.Action("Sua", "QuanLySP", new { @idSP=@item.idSP})">Sửa</a></th>
+    </tr>
+    }
+</table>
+<div class="phanTrang">
+    <p>Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount</p>
+    @Html.PagedListPager(Model, page => Url.Action("Timkiem", new { page = page,TuKhoa=ViewBag.tukhoa}))
+</div>
+<style>
+    td img {
+        max-width: none;
+    }
+
+    td, th {
+        border: solid 1px;
+    }
+
+    tr:hover {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+        tr:hover a {
+            color: #090df5;
+        }
+
+    #tr_1 th {
+        border: solid 1px #000000;
+        background-color: #4A0477;
+        color: #ffffff;
+    }
+
+        #tr_1 th a {
+            color: #090df5;
+        }
+        .phanTrang li{
+        padding:5px;
+        display:inline; 
+    }
+    .phanTrang p{
+        display:inline; 
+    }
+    .pagination-container{
+       margin-left:20px;
+         display:inline; 
+    }
+    .pagination{
+        
+        display:inline;
+    }
+</style>

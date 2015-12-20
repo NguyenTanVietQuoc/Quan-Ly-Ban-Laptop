@@ -1,0 +1,19 @@
+﻿@using StoreLaptop.ServiceReference;
+@model List<SanPham>
+@foreach(var item in ViewBag.cungloai)
+{ 
+<div class="tab-pane fade active in" id="details">
+    <div class="col-sm-3" style="width:33%">
+        <div class="product-image-wrapper">
+            <div class="single-products">
+                <div class="productinfo text-center">
+                    <img src="~/AnhSP/@item.Hinh"style="height:100px!important"  alt="">
+                    <h2>@String.Format("{0:0,0}", @item.Gia)</h2>
+                    <p>@item.TenSP</p>
+                    <button type="button" class="btn btn-default add-to-cart"><a href="@Url.Action("ThemGioHangs", "Giohang", new { @sidSP = @item.idSP , @strUrl = Request.Url.ToString() })"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}

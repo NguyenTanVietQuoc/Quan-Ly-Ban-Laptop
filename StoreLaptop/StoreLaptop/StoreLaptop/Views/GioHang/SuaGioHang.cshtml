@@ -1,0 +1,91 @@
+﻿@using StoreLaptop.ServiceReference;
+@{
+    ViewBag.Title = "SuaGioHang";
+    Layout = "~/Views/Layout/LayoutNguoiDung.cshtml";
+}
+@section Slider{}
+
+@{var stt = 1;}
+<script>
+    function am() {
+        var a = document.getElementById("txtsoluong").value--;
+
+        if (a < 2) {
+            a = 1;
+            document.getElementById("txtsoluong").value = a;
+        }
+    }
+</script>
+<h2>Sửa Giỏ Hàng</h2>
+<div class="container">
+    <div class="table-responsive cart_info">
+        <table class="table table-condensed" style="width:70%">
+            <thead>
+                <tr class="cart_menu">
+                    <td class="image">Ảnh</td>
+                    <td class="description" style="padding-left:30px">Tên Sản Phẩm</td>
+                    <td class="price"> Đơn Giá</td>
+                    <td class="quantity" style="margin-left:30px">Số Lượng</td>
+                    <td class="total">Thành Tiền</td>
+                    <td width="50"></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td align="center" class="a" style="padding-left:5px">
+                            <a href=""><img src="@Url.Content("~/AnhSP/"+ @item.sHinh)" width="70" height="50" alt=""></a>
+                        </td>
+                        <td align="center" class="cart_description" style="padding-left:30px">
+                            <h4><a href="">@item.sTenSP</a></h4>
+                        </td>
+                        <td align="center" class="cart_price">
+                            <p>@String.Format("{0:0,0}", item.sGia) VNĐ</p>
+                        </td>
+                        @using (Html.BeginForm("CapNhatGioHang", "Giohang", new { @sidSP = item.sidSP }))
+                        {
+                            <td class="cart_quantity" style="padding-left:5px">
+                                <div class="cart_quantity_button">
+
+                                    <input class="cart_quantity_input" type="number" min="1" id=" txtsoluong" name="txtsoluong" value="@item.sSoLuong" autocomplete="off" size="2">
+
+                                </div>
+                            </td>
+    <td  class="cart_total">
+        <p class="cart_total_price">@String.Format("{0:0,0}", item.ThanhTien) VNĐ</p>
+    </td>
+    <th class="cart_delete"style="padding-left:5px">
+        <a class="cart_quantity_delete" onclick="return confirm('Bạn có chắc muốn xóa?')" href="@Url.Action("XoaGioHang","Giohang", new { @sidSP= item.sidSP})"><i class="fa fa-times"></i></a>
+    </th>
+
+
+
+    <td colspan="6" style="text-align:right">
+        
+            <input type="submit" value="Cập Nhật" id="capnhat" />
+</td>
+                        }
+                    </tr>
+                }
+                <tr>
+                    <td colspan="6" style="text-align:left">
+                        <button type="button" class="btn btn-default"><a href="@Url.Action("GioHang","Giohang")">Trở Về</a></button>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+    .cart_menu {
+        background-color: #428BCA;
+        color: #fff;
+    }
+   .cart_quantity_button{
+       text-align:center;
+   }
+</style>

@@ -1,0 +1,9 @@
+﻿@using StoreLaptop.ServiceReference;
+<div class="panel-heading">
+        @foreach (var item in ViewBag.SPmoi)
+        {
+            <h4 class="panel-title" ><a class="SPmoi" href="@Url.Action("XemChiTiet","SanPham", new { @idSP=item.idSP})">@item.TenSP</a></h4><br />
+    }
+</div>
+
+

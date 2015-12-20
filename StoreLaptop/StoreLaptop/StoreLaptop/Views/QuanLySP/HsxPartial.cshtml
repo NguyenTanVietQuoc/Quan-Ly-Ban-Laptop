@@ -1,0 +1,27 @@
+﻿@using StoreLaptop.ServiceReference;
+
+@{
+    ViewBag.Title = "HsxPartial";
+    Layout = null;
+}
+@using (Html.BeginForm("Index", "QuanLySP", FormMethod.Post))
+{
+
+<select name="idhsx" onchange="$('form').submit()" >
+   
+    <option value="0">...Chọn hãng sản xuất...</option>
+    @foreach (var item in ViewBag.hsx)
+    {
+        //if (item.idHSX == ViewBag.idHSX) { ViewBag.sl = "selected"; }
+    
+        <option value="@item.idHSX" @{if (item.idHSX == ViewBag.idhsx) { ViewBag.sl = "selected"; } @ViewBag.sl }>@item.TenHSX</option>
+    }
+
+</select>
+}
+<style>
+form{
+    display:inline;
+    margin-right:50px;
+}
+</style>

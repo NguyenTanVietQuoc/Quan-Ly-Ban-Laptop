@@ -1,0 +1,85 @@
+﻿@using StoreLaptop.ServiceReference;
+@model KhachHang
+
+@{
+    ViewBag.Title = "TTKhachHang";
+    Layout = "~/Views/Layout/LayoutNguoiDung.cshtml";
+}
+@section SLider{}
+<h2>Thông Tin Khách Hàng</h2>
+
+<div>
+    
+    
+    <hr />
+    @*@foreach(var item in Model)
+    {*@ 
+    <table border="1" align="left" id="tb">
+    <tr>
+        <th>Họ Tên</th>
+        <td>@Model.HoTen</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <th>Điện Thoại</th>
+        <td>@Model.DienThoai</td>
+    </tr>
+    <tr>
+        <th>Địa Chỉ</th>
+        <td>@Model.DiaChi</td>
+    </tr>
+    <tr>
+        <th>Ngày Sinh</th>
+        <td>@string.Format("{0:dd/MM/yyyy}", @Model.NgaySinh)</td>
+    </tr>
+    <tr>
+        <th>Giới Tính</th>
+        <td>
+            @{if (int.Parse(Model.GioiTinh) == 1) { ViewBag.gioitinh = "Nam"; } else { ViewBag.gioitinh = "Nữ"; }
+            }@ViewBag.gioitinh
+        </td>
+    </tr>
+</table>@*}*@ 
+</div>
+<div style="clear:both"></div>
+<p>
+    @Html.ActionLink("Chỉnh Sửa", "SuaKH","TaiKhoan") |
+    @Html.ActionLink("Đổi Mật Khẩu", "DoiMatKhau","TaiKhoan",new { @idKH = Session["idKH"] })
+</p>
+@Html.Action("DonHangPartial", "TaiKhoan")
+<style>
+    th, td {
+        width: 300px;
+        text-align:center;
+    }
+
+    th {
+        background-color: #428BCA;
+        color: #fff;
+        height:40px;
+        
+    }
+    td, th {
+        border: solid 1px #428BCA;
+    }
+    
+    #tb td,th{
+        
+        border: solid 1px #808080;
+    }
+    #tb td{
+        text-align:left;
+        padding-left:10px;
+    }
+    #tb{
+        width:600px;
+        margin:auto;
+    }
+    .features_items{
+        text-align:center;
+        color:#428BCA;
+    }
+</style>

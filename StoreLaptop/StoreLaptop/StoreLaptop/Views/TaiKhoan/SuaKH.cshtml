@@ -1,0 +1,89 @@
+﻿@using StoreLaptop.ServiceReference;
+@model StoreLaptop.ServiceReference.KhachHang
+@{
+    ViewBag.Title = "SuaKH";
+    Layout = "~/Views/Layout/LayoutNguoiDung.cshtml";
+}
+@section Slider{}
+<h2>Sửa Thông Tin</h2>
+
+<h3 class="text-danger">@ViewBag.thongbao</h3>
+@{
+    if(int.Parse(Model.GioiTinh) == 1) 
+    { ViewBag.check = "checked"; ViewBag.check1 = ""; } 
+    else { ViewBag.check = ""; ViewBag.check1 = "checked"; } 
+}
+@using (Html.BeginForm("SuaKH", "TaiKhoan", new { idKH = Session["idKH"] }))
+{ 
+
+
+    <div class="form-horizontal">
+
+        <hr />
+        <div class="form-group">
+            <label class="control-label col-md-3">Họ Tên :</label>
+            <div class="col-md-9">
+                <input class="form-control" style="margin-left:0" type="text" name="HoTen" id="HoTen" value="@Model.HoTen" />
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3">Email :</label>
+            <div class="col-md-9">
+                <input class="form-control" style="margin-left:0" type="text" name="Email" id="Email" value="@Model.Email" />
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3">Điện Thoại :</label>
+            <div class="col-md-9">
+                <input class="form-control" style="margin-left:0" type="text" name="DienThoai" id="DienThoai" value="@Model.DienThoai" />
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3">Địa Chỉ :</label>
+            <div class="col-md-9">
+                <textarea class="form-control" style="margin-left:0" id="DiaChi" name="DiaChi">@Model.DiaChi</textarea>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            
+                <label class="control-label col-md-3"> Nam: <input type="radio" name="GioiTinh" value="1" @ViewBag.check /></label>
+                <label class="control-label col-md-3" style="text-align:left">Nữ <input type="radio" name="GioiTinh" value="0" @ViewBag.check1 /></label>
+            </div>
+
+
+        </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3" style="text-align:right">Ngày Sinh :</label>
+                        <div class="col-md-9">
+                            <input readonly class="form-control" style="margin-left:0" type="text" name="NgaySinh" id="datepicker" value="@string.Format("{0:yyyy/MM/dd}", @Model.NgaySinh)" /><br />                            
+                        </div>
+                    </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10" style="padding-left:9%">
+                        <input type="submit" value="Cập Nhật" class="btn btn-default" />
+                    </div>
+                </div>
+            }
+
+<div>
+    @Html.ActionLink("Trở Về", "TTKhachHang", "TaiKhoan")
+</div><br />
+
+@*<script src="~/Scripts/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+<script src="~/Scripts/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+<link href="~/Scripts/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/Scripts/jquery-ui-1.11.4/jquery-ui.theme.min.css" rel="stylesheet" />*@
+<script>
+    $(function () {
+        $("#datepicker").datepicker({
+            dateFormat: "yy/mm/dd",
+            changeYear: true,
+            yearRange: "1915:2015",
+        });
+    });
+</script>

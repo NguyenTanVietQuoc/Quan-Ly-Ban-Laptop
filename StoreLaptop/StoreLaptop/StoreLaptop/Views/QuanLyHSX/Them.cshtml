@@ -1,0 +1,61 @@
+﻿@model StoreLaptop.ServiceReference.HangSanXuat
+@{
+    ViewBag.Title = "Them";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>HangSanXuat</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                <label class="control-label col-md-2" for="TenHSX">
+                    Tên
+                </label>
+                    <input type="text" name="TenHSX" placeholder="Nhập tên hãng sản xuất mới" />
+                
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="AnHien">Hiện/Ẩn</label>
+            <div class="col-md-10">
+                <select name="AnHien">
+                    <option value="1">Hiện</option>
+                    <option value="0">Ẩn</option>
+                </select>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Thêm" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<style>
+    label{
+        padding-top:3px !important;
+        clear:both;
+    }
+</style>
+
+

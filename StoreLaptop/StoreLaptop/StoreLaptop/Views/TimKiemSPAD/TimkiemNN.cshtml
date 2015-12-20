@@ -1,0 +1,33 @@
+﻿@using StoreLaptop.ServiceReference;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.PagedList<SanPham>
+@{
+    ViewBag.Title = "TimkiemNN";
+    Layout = "~/Views/Layout/LayoutNguoiDung.cshtml";
+}
+@section Slider{}
+@foreach (var item in Model)
+{
+    var gia = item.Gia;
+    var thu = String.Format("{0:0,0}", gia);
+    <div class="col-sm-4">
+        <div class="product-image-wrapper">
+
+            <div class="single-products">
+                <div class="productinfo text-center">
+                    <img src="~/AnhSP/@item.Hinh" />
+                    <h2>@thu VNĐ</h2>
+                    <p>@item.TenSP</p>
+                    <a href="@Url.Action("XemChiTiet","SanPham", new { @idSP=item.idSP})" id="btncart" class="btn btn-default add-to-cart"><i class="fa fa-hand-o-right"></i>Xem Chi Tiết</a>
+                    <a href="@Url.Action("ThemGioHangs", "Giohang", new { @sidSP = item.idSP, @strUrl = Request.Url.ToString() })" id="btncart" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div style="clear:both"></div>
+<div>
+    <p>Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount</p>
+    @Html.PagedListPager(Model, page => Url.Action("TimkiemNN", new { page = page, TuKhoa = ViewBag.tukhoa }))
+</div>

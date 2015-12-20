@@ -1,0 +1,8 @@
+﻿@using StoreLaptop.ServiceReference;
+
+<ul class="nav nav-pills nav-stacked">
+    @foreach (var item in ViewBag.hsx)
+    {
+        <li><a href="@Url.Action("SPHangSanXuat", new { @idHSX = item.idHSX })"> @item.TenHSX</a></li>
+    }
+</ul>

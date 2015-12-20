@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreLaptop", "StoreLaptop\StoreLaptop.csproj", "{883F8B6C-EFAA-4423-8C53-BE120B9F40E6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CCE3810E-4B05-412D-AB70-1FC0BF45ED8D} = {CCE3810E-4B05-412D-AB70-1FC0BF45ED8D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaptopService", "LaptopService\LaptopService.csproj", "{CCE3810E-4B05-412D-AB70-1FC0BF45ED8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{883F8B6C-EFAA-4423-8C53-BE120B9F40E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{883F8B6C-EFAA-4423-8C53-BE120B9F40E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{883F8B6C-EFAA-4423-8C53-BE120B9F40E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{883F8B6C-EFAA-4423-8C53-BE120B9F40E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE3810E-4B05-412D-AB70-1FC0BF45ED8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE3810E-4B05-412D-AB70-1FC0BF45ED8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE3810E-4B05-412D-AB70-1FC0BF45ED8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE3810E-4B05-412D-AB70-1FC0BF45ED8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,46 @@
+﻿@using StoreLaptop.ServiceReference;
+
+<h4>Danh Sách Đơn Hàng</h4>
+<table width="800" border="1" id="tb_2">
+    <tr>
+        <th>STT</th>
+        <th>Người Nhận</th>
+        <th>Ngày Giao</th>
+        <th>Địa Chỉ Giao</th>       
+        <th>Tình Trạng</th>
+        <th>Xem Chi Tiết</th>
+        <th></th>
+    </tr>
+    @{int stt = 0;    }
+@foreach (var item in ViewBag.dh)
+{
+    
+  
+    <tr>
+        @{stt++; ViewBag.stt = stt;}
+
+        <td>@ViewBag.stt</td>
+       
+        <td>@item.TenNguoiNhan</td>
+        <td>@string.Format("{0:dd/MM/yyyy}",item.NgayGiao)</td>
+        <td>@item.DiaDiemGiao</td> 
+        <td>
+            @{if (2 == item.TinhTrang)
+            { ViewBag.tinhtrang = "Đang giao"; }
+            else if (3 == item.TinhTrang)
+            { ViewBag.tinhtrang = "Đã giao"; }
+            else if (4 == item.TinhTrang)
+            { ViewBag.tinhtrang = "Hủy"; }
+            else { ViewBag.tinhtrang = "Đang xử lý"; }
+            }@ViewBag.tinhtrang
+        </td>
+       
+        <td><a href="@Url.Action("ChiTietDonHang", "TaiKhoan", new { idDH = @item.idDH})">Chi Tiết</a></td>
+        <td><a href="@Url.Action("HuyDonHang", "TaiKhoan", new { idDH = @item.idDH})" onclick="return confirm('Bạn có chắc muốn hủy?')">
+    @{
+    if (1 == item.TinhTrang) { ViewBag.huy = "Hủy"; } else { ViewBag.huy = ""; }
+        } @ViewBag.huy
+    </a></td>
+    </tr>
+}
+</table>

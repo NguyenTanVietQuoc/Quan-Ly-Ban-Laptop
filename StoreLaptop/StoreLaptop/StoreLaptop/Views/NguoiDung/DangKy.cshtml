@@ -1,0 +1,223 @@
+﻿@model StoreLaptop.ServiceReference.KhachHang
+
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Layout/LayoutNguoiDung.cshtml";
+    
+}
+@section Slider{}
+<h2 id="abc" style="padding-left:20%">Đăng Ký</h2>
+<p>@ViewBag.thongbao</p>
+<p class="text-danger">@ViewBag.KiemTraTk</p>
+<span class="text-danger" id="text"></span>
+@using (@Html.BeginForm())
+{ 
+    
+    @*@Html.AntiForgeryToken()*@
+
+    <div class="form-horizontal">
+        <hr />
+        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.HoTen, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.HoTen, new { htmlAttributes = new { @class = "form-control" } })
+                <span class="text-danger" id="hoten"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                <span class="text-danger" id="email"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.MatKhau, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
+                <span class="text-danger" id="mk"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <p class="control-label col-md-2" style="font-weight:bold;font-size:15px">Nhập lại mật khẩu</p>
+            <div class="col-md-10">
+                <input type="password" name="repass" id="repass" />
+                <span class="text-danger" id="remk"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3"> Nam: <input type="radio" name="GioiTinh" value="1" checked /></label>
+            <label class="control-label col-md-3" style="text-align:left">Nữ <input type="radio" name="GioiTinh" value="0" /></label>
+        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.DienThoai, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.DienThoai, new { htmlAttributes = new { @class = "form-control" } })
+                    <span class="text-danger" id="dt"></span>
+                </div>
+            </div>
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.DiaChi, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+                    <span class="text-danger" id="diachi"></span>
+                </div>
+            </div>*@
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" @*onclick="kt()"*@ id="sm" value="Đăng Ký" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+}
+
+    @*<script>
+        function mk() {
+            if(document.getElementById("repass").value != document.getElementById("MatKhau").value)
+            {
+                document.getElementById("repass").focus();
+                document.getElementById("text-danger").innerHTML = "Nhập lại mật khẩu không chính xác!";
+                return false;
+            }
+
+            return true;
+        }
+        document.getElementById("dk").onsubmit = mk;
+
+    </script>*@
+
+<script src="~/Scripts/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+    @*<script>
+    document.getElementById("sm").click(function () {
+        var i = 0;
+        
+        if (document.getElementById('#Email').value == "") {
+            $('#email').text("*Email không được để trống.");
+            i++;
+        }
+        else
+            $('#email').text("");
+        if ($('#MatKhau').val() == "") {
+            $('#mk').text("*Mật khẩu không được để trống.");
+            i++;
+        }
+        else
+            $('#mk').text("");
+        if ($('#HoTen').val() == "") {
+            $('#hoten').text("*Họ tên không được để trống.");
+            i++;
+        }
+        else
+            $('#hoten').text("");
+        if ($('#MatKhau').val() != $('#repass').val()) {
+            $('#remk').text("Mật khẩu nhập lại sai.");
+            i++;
+        }
+        else
+            $('#remk').text("");
+        if ($('#DienThoai').val() == "") {
+            $('#dt').text("*điện thoại không được để trống.");
+            i++;
+        }
+        else
+            $('#dt').text("");
+        if ($('#DiaChi').val() == "") {
+            $('#diachi').text("*Địa chỉ không được để trống.");
+            i++;
+        }
+        else
+            $('#dt').text("");
+        if (i != 0) {
+            return false;
+        }
+        return true;
+    });
+    </script>*@
+@*<script>
+    document.getElementById("sm").click=function () {
+        var i = 0;
+
+        if (document.getElementById('Email').value == "") {
+            document.getElementById('email').innerHTML="*Email không được để trống.";
+            i++;
+        }
+        else
+            document.getElementById('email').innerHTML = "";
+        if (document.getElementById('MatKhau').value == "") {
+            document.getElementById('mk').innerHTML="*Mật khẩu không được để trống.";
+            i++;
+        }
+        else
+            document.getElementById('mk').innerHTML = "";
+        if (document.getElementById('HoTen').value == "") {
+            document.getElementById('hoten').innerHTML="*Họ tên không được để trống.";
+            i++;
+        }
+        else
+            document.getElementById('hoten').innerHTML = "";
+        if (document.getElementById('MatKhau').value != document.getElementById('repass').value) {
+            document.getElementById('remk').innerHTML="Mật khẩu nhập lại sai.";
+            i++;
+        }
+        else
+            document.getElementById('remk').innerHTML = "";
+        if (document.getElementById('DienThoai').val() == "") {
+            document.getElementById('dt').innerHTML="*điện thoại không được để trống.";
+            i++;
+        }
+        else
+            document.getElementById('dt').innerHTML = "";
+        if (document.getElementById('DiaChi').value == "") {
+            document.getElementById('diachi').innerHTML="*Địa chỉ không được để trống.";
+            i++;
+        }
+        else
+            document.getElementById('dt').innerHTML="";
+        if (i != 0) {
+            return false;
+        }
+        return true;
+    };
+</script>*@
+<script>
+        //function kt() {
+        //    a = document.getElementById('Email').value;
+        //    b = document.getElementById('HoTen').value;
+        //    c = document.getElementById('MaKhau').value;
+        //    d = document.getElementById('repass').value;
+        //    e = document.getElementById('DienThoai').value;
+        //    f = document.getElementById('DiaChi').value;
+        //    if(a == ''|| b == ''||c == ''||e == ''||f == '')
+        //    {
+        //        document.getElementById('text').innerText = "Bạn phải nhập đủ thông tin!";
+        //        return false;
+        //    }
+        //    return true;
+        //}
+        //document.getElementById('sm1').onsubmit = kt();
+       
+    //$('#btnSubmitDN').click(function () {
+    //    var i = 0;
+
+    //    if ($('#txtTaiKhoan').val() == "") {
+    //        $('#erTKDN').text("*Tài khoản không được để trống.");
+    //        i++;
+    //    }
+    //    else
+    //        $('#erTKDN').text("");
+    //    if ($('#txtMatKhau').val() == "") {
+    //        $('#erMKDN').text("*Mật khẩu không được để trống.");
+    //        i++;
+    //    }
+    //    else
+    //        $('#erMKDN').text("");
+
+    //    if (i != 0) {
+    //        return false;
+    //    }
+    //    return true;
+    //});
+    </script>
+

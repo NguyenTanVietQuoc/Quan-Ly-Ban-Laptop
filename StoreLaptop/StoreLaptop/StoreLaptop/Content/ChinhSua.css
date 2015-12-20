@@ -1,0 +1,134 @@
+﻿
+a.SPmoi{
+
+}
+a.SPmoi:hover{
+    color:#5197FF;
+}
+body {
+}
+#menu ul
+{
+	/*padding-top:10px;*/
+	list-style-type:none;
+	
+}
+#menu ul li
+{
+	float:left;
+	padding-left:10px;
+	padding-right:15px;
+	border-right: 1px solid #FFF;
+	position:relative;
+	padding-bottom:8px;
+	padding-top:5px;
+    transition:0.5s;
+    /*background-color:#dbcece;*/
+}
+#menu ul li:hover{
+    color:white;
+    
+    transition:0.5s;
+}
+    #menu ul li:hover li a{
+        color:white;
+    }
+#menu li a
+{
+	font-size:18px;
+	text-decoration:none;
+	white-space:pre;
+	
+}
+#menu li a{
+    color:#FFF;
+}
+#menu li a:hover
+{
+	color:#4800ff;
+}
+#menu ul ul li
+{
+	float:none;
+	border-right: none;	
+	background-color:#428BCA;
+	opacity:0.7;
+    width:160px;
+}
+#menu ul ul li:hover
+{
+	
+	background-color:#428BCA;
+	opacity:1;
+}
+#menu ul ul li:hover a
+{
+	
+	color:#fff;
+}
+#menu ul ul li a:hover
+{
+	
+	color:#4800ff;
+}
+
+#menu ul ul li a
+{
+	font-size:16px;
+}
+#menu ul ul 
+{
+	position: absolute;
+	z-index: 1000;
+	top:100%;
+	left:-40px;
+	display:none;
+	padding-top:0;
+}
+#menu ul li:hover > ul
+{
+	display:block;
+}
+#menu ul ul ul
+{	
+    padding:0;
+	top:0;
+	left:100%;
+	display:none;
+}
+/*end menu*/
+#muiten {
+    float:right;
+}
+#hinh {
+    float:left;
+}
+#mota{
+    width:300px;
+    float:left;
+    margin-left:160px;
+}
+#btncart{
+    font-size: 13px;
+  margin-bottom: 10px;
+}
+#form{
+    margin-left:30px;
+}
+.phantrang li{
+    float:left;
+
+}
+#DiaDiemGiao, #GhiChu{
+    width:30%;
+    height:80px;
+}
+#sm1{
+    background-image:url(../../AnhSP/btn.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-color:white;552 091 438552 091 438
+    width:50px;
+    height:50px;
+    border:none;
+}

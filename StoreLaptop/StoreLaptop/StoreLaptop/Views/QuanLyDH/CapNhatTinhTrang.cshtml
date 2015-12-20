@@ -1,0 +1,53 @@
+﻿@model StoreLaptop.ServiceReference.DonHang
+
+@{
+    ViewBag.Title = "CapNhatTinhTrang";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<h2>Cập nhật tình trạng đơn hàng</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+       
+       
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.TinhTrang, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TinhTrang, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TinhTrang, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+        @*<form @Html.Action("CanNhatTinhTrang", "QuanLyDH", new { idDH=@Model.idDH }) method="post">*@
+            <select name="tinhtrang">
+              
+                    @{if (2 == Model.TinhTrang) { ViewBag.sl2 = "selected"; }
+                      else if (3 == Model.TinhTrang) { ViewBag.sl3 = "selected"; }
+                      else if (4 == Model.TinhTrang) { ViewBag.sl4 = "selected"; }
+                      else { ViewBag.sl1 = "selected"; }
+}
+                    <option value="1" @ViewBag.sl1>Đang xử lý</option>
+                    <option value="2" @ViewBag.sl2>Đang giao</option>
+                    <option value="3" @ViewBag.sl3>Đã giao</option>
+                    <option value="4" @ViewBag.sl4>Hủy</option>
+                
+            </select>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Cập nhật tình trạng" class="btn btn-default" />
+                </div>
+            </div>
+    </div>
+}
+@*</form>*@
+<div>
+    @Html.ActionLink("Trở về quản lý đơn hàng", "Index")
+</div>

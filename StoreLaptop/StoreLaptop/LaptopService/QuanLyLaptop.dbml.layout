@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.125, 11.125" name="QuanLyLaptop">
+  <DataContextMoniker Name="/QuanLyLaptopDataContext" />
+  <nestedChildShapes>
+    <classShape Id="59396276-2aeb-4cc2-a299-92d212f89189" absoluteBounds="0.75, 1.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QuanLyLaptopDataContext/ChungLoai" />
+      <nestedChildShapes>
+        <elementListCompartment Id="440dbffe-b78e-491d-9015-4f5f66208b92" absoluteBounds="0.765, 2.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="97a1acac-05da-472f-8556-614f88103268" absoluteBounds="6.25, 1, 2, 3.1170068359375009">
+      <DataClassMoniker Name="/QuanLyLaptopDataContext/SanPham" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8d8fd4b-c59b-4709-8cf9-e65140c0923a" absoluteBounds="6.265, 1.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cffa9813-340c-4dd8-a3fa-323e92200e16" absoluteBounds="9, 1.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QuanLyLaptopDataContext/DonHangChiTiet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e2b1218-dcaf-4f93-8d8b-4ea8b583771b" absoluteBounds="9.015, 2.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b0477f16-bf40-4b9c-a15f-a2ba6c5bc798" absoluteBounds="3.5, 5.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/QuanLyLaptopDataContext/HangSanXuat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e4f6a6a-7ef1-4b34-8e18-697b8b6f8849" absoluteBounds="3.515, 6.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f760d325-774a-4680-bd0c-0282a800551a" absoluteBounds="3.5, 8.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/QuanLyLaptopDataContext/KhachHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90ed86de-a931-421b-8241-05fbd0fc778d" absoluteBounds="3.515, 8.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f8a85779-6c06-4108-87d0-05aeb7878a30" absoluteBounds="3.5, 1.625, 2, 1.7708968098958333">
+      <DataClassMoniker Name="/QuanLyLaptopDataContext/LoaiSP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a7ddd3b-1fd2-41ce-b85b-30dfb2944aa3" absoluteBounds="3.515, 2.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 2.53929768880208); (9 : 2.53929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/QuanLyLaptopDataContext/SanPham/SanPham_DonHangChiTiet" />
+      <nodes>
+        <classShapeMoniker Id="97a1acac-05da-472f-8556-614f88103268" />
+        <classShapeMoniker Id="cffa9813-340c-4dd8-a3fa-323e92200e16" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.76369466145833); (7.53125 : 6.76369466145833); (7.53125 : 4.1170068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/QuanLyLaptopDataContext/HangSanXuat/HangSanXuat_SanPham" />
+      <nodes>
+        <classShapeMoniker Id="b0477f16-bf40-4b9c-a15f-a2ba6c5bc798" />
+        <classShapeMoniker Id="97a1acac-05da-472f-8556-614f88103268" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.51044840494792); (6.25 : 2.51044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/QuanLyLaptopDataContext/LoaiSP/LoaiSP_SanPham" />
+      <nodes>
+        <classShapeMoniker Id="f8a85779-6c06-4108-87d0-05aeb7878a30" />
+        <classShapeMoniker Id="97a1acac-05da-472f-8556-614f88103268" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.53929768880208); (3.5 : 2.53929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/QuanLyLaptopDataContext/ChungLoai/ChungLoai_LoaiSP" />
+      <nodes>
+        <classShapeMoniker Id="59396276-2aeb-4cc2-a299-92d212f89189" />
+        <classShapeMoniker Id="f8a85779-6c06-4108-87d0-05aeb7878a30" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dc123d53-31ca-4cdc-ad1d-dc82d60a6911" absoluteBounds="10.875, 5.5, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/QuanLyLaptopDataContext/DonHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f57941a8-ff0a-406f-8524-b10a80e8b185" absoluteBounds="10.89, 5.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.9375005 : 5.5); (11.9375005 : 2.53929768880208); (11 : 2.53929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/QuanLyLaptopDataContext/DonHang/DonHang_DonHangChiTiet" />
+      <nodes>
+        <classShapeMoniker Id="dc123d53-31ca-4cdc-ad1d-dc82d60a6911" />
+        <classShapeMoniker Id="cffa9813-340c-4dd8-a3fa-323e92200e16" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 9.6410551875); (11.875 : 9.6410551875); (11.875 : 8.42470540364583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/QuanLyLaptopDataContext/KhachHang/KhachHang_DonHang" />
+      <nodes>
+        <classShapeMoniker Id="f760d325-774a-4680-bd0c-0282a800551a" />
+        <classShapeMoniker Id="dc123d53-31ca-4cdc-ad1d-dc82d60a6911" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ea2b21a8-5ded-406a-a9c7-675694de4222" absoluteBounds="0.875, 4, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QuanLyLaptopDataContext/Admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8c9d01e-7df1-488e-8c36-426cff5f15d4" absoluteBounds="0.88999999999999968, 4.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

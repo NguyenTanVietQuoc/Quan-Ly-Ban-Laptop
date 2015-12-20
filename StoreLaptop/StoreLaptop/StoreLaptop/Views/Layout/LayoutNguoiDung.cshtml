@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/LayoutNguoiDung/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/LayoutNguoiDung/prettyPhoto.css" rel="stylesheet" />
+    <link href="~/Content/LayoutNguoiDung/price-range.css" rel="stylesheet" />
+    <link href="~/Content/LayoutNguoiDung/animate.css" rel="stylesheet" />
+    <link href="~/Content/LayoutNguoiDung/main.css" rel="stylesheet" />
+    <link href="~/Content/LayoutNguoiDung/responsive.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/ChinhSua.css" rel="stylesheet" />
+
+    @*<script src="~/Scripts/js/jquery.js"></script>*@
+   
+
+    <script src="~/Scripts/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+    <script src="~/Scripts/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+    <link href="~/Scripts/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Scripts/jquery-ui-1.11.4/jquery-ui.theme.min.css" rel="stylesheet" />
+  
+    @*<link href="~/Scripts/jquery-1.11.4/jquery-ui.min.css" rel="stylesheet" />*@
+</head>
+<body>
+
+    <header id="header">
+        <!--header-->
+        <div class="header_top">
+            <!--header_top-->
+            <div class="container">
+            </div>
+        </div><!--/header_top-->
+
+        <div class="header-middle">
+            <!--header-middle-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        @*<div class="logo pull-left">
+                            <a href="index.html"><img src="~/Content/images/home/logo.png" alt="" /></a>
+                        </div>*@
+
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="shop-menu pull-right">
+                            <ul class="nav navbar-nav">
+                                @{
+                                    
+                                    if (@Session["ten"] == null)
+                                    {
+                                        ViewBag.dangnhap = "Đăng Nhập";
+                                        ViewBag.dangnhap1 = "DangNhap";
+
+
+                                    }
+                                    else
+                                    {
+                                        ViewBag.tk1 = @Url.Action("TTKhachHang", "TaiKhoan");
+                                        ViewBag.dangnhap = "Đăng Xuất"; ViewBag.dangnhap1 = "DangXuat";
+                                        ViewBag.taikhoan = "<li><a href=" + @ViewBag.tk1 + " ><i class='fa fa-user'></i>Tài Khoản</a></li>";
+                                        
+                                    }
+                                    
+                                  }
+                                <li><a href="#"><i class="fa fa-user"></i>Xin Chào @Session["ten"]!</a></li>
+                                @Html.Raw(@ViewBag.taikhoan)
+                                @*<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>*@
+                                <li>@Html.Action("GioHangPartial", "Giohang")</li>                                
+                                <li><a href="@Url.Action(@ViewBag.dangnhap1, "NguoiDung")"><i class="fa fa-unlock-alt"></i></i> @ViewBag.dangnhap</a></li>
+
+                                <li><a href="@Url.Action("DangKy","NguoiDung")"><i class="fa fa-arrow-circle-right"></i>Đăng Ký</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header-middle-->
+
+        <div class="header-bottom">
+            <!--header-bottom-->
+            <div class="container">
+                <div class="col-sm-12">
+                    <div class="col-sm-12" style="background-color:#428bca;height:50px">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div id="menu" class="">
+                            @Html.Action("MenuPartial", "Menu")
+                            <div class="search_box pull-right" style="width:300px">
+                                @*<input type="text" placeholder="Search" />*@
+                                @*@using (Html.BeginForm("TimKiemNN", "TimKiemSPAD", FormMethod.Post))
+                                {
+                                    <input type="text" name="TuKhoa" value="@ViewBag.tukhoa1" placeholder="Tìm Kiếm" />
+                                    <a href="#" onclick="$('#sm1').click()"><img src="~/Content/admin/img/Image-Search.png" style="height:40px !important;" align="absmiddle" /></a>
+                                    <button id="sm1" type="submit" style="display:none" />
+                                }*@
+                                @using (Html.BeginForm("TimkiemNN", "TimKiemSPAD"))
+                                {
+                                    <input type="text" name="TuKhoa" placeholder="Nhập từ khóa" />
+                                    <a href="#" onclick="$('#sm').click()"><img src="~/Content/admin/img/Image-Search.png" style="height:30px !important" align="absmiddle" /></a>
+                                    <input type="submit" value="Tìm kiếm" id="sm" style="display:none" />
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+                <script>
+                    $('#sm1').click(function () {
+                        if($('#txttimkiem').val=="")
+                        {
+                            alert("Vui Lòng Nhập Từ Khóa!");
+                        }
+                    });*@
+
+                        @*</script>*@
+                    </div>
+                </div>
+            </div>
+        </div><!--/header-bottom-->
+    </header><!--/header-->
+
+    <section id="slider">
+        <!--slider-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                        @RenderSection("Slider")
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section><!--/slider-->
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="left-sidebar">
+                        <h2>Sản Phẩm Mới</h2>
+                        <div class="panel-group category-products" id="accordian">
+                            <!--category-productsr-->
+                            <div class="panel panel-default">
+                                @Html.Action("SPMoiPartial", "SPMoi")
+                            </div><!--/category-products-->
+                        </div>
+                        <div class="brands_products">
+                            <!--brands_products-->
+                            <h2>Hãng Sản Xuất</h2>
+                            <div class="brands-name">
+                                @Html.Action("HangSanXuatPartial", "HangSanXuat")
+                            </div>
+                        </div><!--/brands_products-->
+
+                        @*<div class="price-range">
+                            <!--price-range-->
+                            <h2>Price Range</h2>
+                            <div class="well text-center">
+                                <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br />
+                                <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
+                            </div>
+                        </div><!--/price-range-->*@
+
+                        @*<div class="shipping text-center">
+                            <!--shipping-->
+                            <img src="images/home/shipping.jpg" alt="" />
+                        </div><!--/shipping-->*@
+
+                    </div>
+                </div>
+
+                <div class="col-sm-9 padding-right">
+                    <div class="features_items">
+                        <!--features_items-->
+                        @RenderBody()
+
+                    </div><!--features_items-->
+
+
+                    
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @*<footer id="footer">
+        Footer
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Service</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Online Help</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Order Status</a></li>
+                                <li><a href="#">Change Location</a></li>
+                                <li><a href="#">FAQ’s</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Quock Shop</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">T-Shirt</a></li>
+                                <li><a href="#">Mens</a></li>
+                                <li><a href="#">Womens</a></li>
+                                <li><a href="#">Gift Cards</a></li>
+                                <li><a href="#">Shoes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Policies</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Terms of Use</a></li>
+                                <li><a href="#">Privecy Policy</a></li>
+                                <li><a href="#">Refund Policy</a></li>
+                                <li><a href="#">Billing System</a></li>
+                                <li><a href="#">Ticket System</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>About Shopper</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Company Information</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Store Location</a></li>
+                                <li><a href="#">Affillate Program</a></li>
+                                <li><a href="#">Copyright</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <div class="single-widget">
+                            <h2>About Shopper</h2>
+                            <form action="#" class="searchform">
+                                <input type="text" placeholder="Your email address" />
+                                <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+                                <p>Get the most recent updates from <br />our site and be updated your self...</p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+                    <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+                </div>
+            </div>
+        </div>
+
+    </footer*@><!--/Footer-->
+
+
+
+    <script src="~/Scripts/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/js/jquery.scrollUp.min.js"></script>
+    <script src="~/Scripts/js/price-range.js"></script>
+    <script src="~/Scripts/js/jquery.prettyPhoto.js"></script>
+    <script src="~/Scripts/js/main.js"></script>  
+</body>
+</html>

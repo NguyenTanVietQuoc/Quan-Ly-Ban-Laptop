@@ -1,0 +1,61 @@
+﻿@using StoreLaptop.ServiceReference;
+@model KhachHang
+@{
+    ViewBag.Title = "DoiMatKhau";
+    Layout = "~/Views/Layout/LayoutNguoiDung.cshtml";
+}
+@section Slider{}
+<h2>Đổi Mật Khẩu</h2>
+@using (Html.BeginForm("DoiMatKhau", "TaiKhoan", new { idKH = Session["idKH"]}))
+{
+    <div class="form-horizontal">
+        <hr />
+        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.HoTen, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-3" >Mật Khẩu Cũ :</label>
+            <div class="col-md-9">
+                @*@Html.TextBoxFor(model => model.HoTen, new { htmlAttributes = new { @class = "form-control" } })*@
+                <input class="form-control" style="margin-left:0" type="password" name="matkhaucu" id="matkhaucu" />
+                <span class="text-danger" id="mkcu">@ViewBag.matkhaucu</span><br />
+            </div>
+            <label class="control-label col-md-3">Mật Khẩu Mới :</label>
+            <div class="col-md-9">
+                @*@Html.TextBoxFor(model => model.HoTen, new { htmlAttributes = new { @class = "form-control" } })*@
+                <input class="form-control" style="margin-left:0" type="password" name="MatKhau" id="MatKhau" />
+                <span class="text-danger" id="mkmoi"></span><br />
+            </div>
+            <label class="control-label col-md-3">Nhập Lại Mật Khẩu :</label>
+            <div class="col-md-9">
+                @*@Html.TextBoxFor(model => model.HoTen, news { htmlAttributes = new { @class = "form-control" } })*@
+                <input class="form-control" style="margin-left:0" type="password" name="reMatKhau" id="reMatKhau" />
+                <span class="text-danger" id="remk"></span><br />
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10" style="margin-left:25%">
+                    <input type="submit" @*onclick="kt()"*@ id="sm" value="Cập Nhật" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $('#sm').click(function () {
+        var i = 0;
+        if ($("#MatKhau").val < 6) {
+            $('#mkmoi').text("Mật khẩu tối thiểu phải 6 ký tự!");
+            i++;
+        }
+        else $('#mkmoi').text("");
+        if ($('#MatKhau').val() != $('#reMatKhau').val()) {
+            $('#remk').text("Mật khẩu nhập lại sai.");
+            i++;
+        }
+        else
+            $('#remk').text("");
+        if (i == 0)
+        { return true; }
+        return false;
+    });
+</script>

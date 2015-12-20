@@ -1,0 +1,36 @@
+﻿@using StoreLaptop.ServiceReference;
+@model LoaiSP
+
+<ul>
+    <li><a href="~/Home/Index" class="active">Trang Chủ</a></li>
+    <li class="">
+        <a href="#">Sản Phẩm<i class="fa fa-angle-down"></i></a>
+        <ul>
+            @foreach(var item in ViewBag.hsx)
+            { 
+            <li><a href="@Url.Action("SPHangSanXuat","HangSanXuat", new { @idHSX = item.idHSX })">@item.TenHSX</a></li>
+            }
+        </ul>
+        @*<ul class="">
+            @foreach (var item in ViewBag.lsp)
+            {
+                <li><a href="@Url.Action("ChiTietLoai", new { @idLoai = item.idLoai })">@item.TenLoai</a></li>
+                <li>
+                   @Model.
+                    <a href="shop.html">@item.TenLoai<div id="muiten"><i class="fa fa-angle-right"></i></div></a>
+                    <ul class="">
+                        @foreach (var subitem in @Html.Action("LayChungLoaiTheoID", "SanPham", new { id = @item.idCL}))
+                        {
+                            <li><a href="@Url.Action("ChiTietLoai", new { @idLoai = subitem.idLoai })">@subitem.TenLoai</a></li>
+                        }
+                    </ul>
+                </li>
+            }
+        </ul>*@
+    </li>
+
+    <li class="dropdown"><a href="#">Giới Thiệu</a></li>
+    
+  
+</ul>
+

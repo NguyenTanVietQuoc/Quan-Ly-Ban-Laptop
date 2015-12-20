@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Sua";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Chỉnh sửa hãng sản xuất</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+@foreach (var i in ViewBag.hsx) {
+        <div class="form-group">
+
+            <div class="col-md-10">
+                <label class="control-label col-md-2" for="TenHSX">
+                    Tên
+                </label>
+                
+                <input type="text" name="TenHSX" placeholder="Tên hãng sản xuất mới" value="@i.TenHSX"/>
+                
+            </div>
+
+        </div>
+
+        <div class="form-group">
+           
+            <label class="control-label col-md-2" for="AnHien">Hiện/Ẩn</label>
+            <div class="col-md-10">
+                
+                <select name="AnHien" id="sl" onchange="canhbao()">
+                    <option value="1" @{if(1==i.AnHien){ViewBag.sl="selected";} @ViewBag.sl}>Hiện</option>
+                    <option value="0" @{if (0 == i.AnHien) { ViewBag.sl2 = "selected"; } @ViewBag.sl2 }>Ẩn</option>
+                </select>
+                <img src="~/Content/admin/img/img-cb.png" style="height:20px !important" />
+                <i style="color:red">Nếu lựa chọn ẩn thì tất cả sản phẩm thuộc hãng này sẽ ẩn.</i>
+            </div>
+            
+               
+           
+
+            </div>
+}
+
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Sửa" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Trở về trang quản lý hãng sản xuất", "Index")
+</div>
+<style>
+    label {
+        padding-top:3px !important;
+        clear: both;
+    }
+</style>
+<script>
+    function canhbao() {
+        if (document.getElementById("sl").value == 0) {
+            alert("Nếu lựa chọn ẩn thì tất cả sản phẩm thuộc hãng này sẽ ẩn.");
+        }
+    }
+</script>
+

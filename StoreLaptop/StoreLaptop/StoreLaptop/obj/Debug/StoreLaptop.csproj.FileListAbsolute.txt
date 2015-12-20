@@ -1,0 +1,59 @@
+e:\Projects2\StoreLaptop\StoreLaptop\bin\StoreLaptop.dll.config
+e:\Projects2\StoreLaptop\StoreLaptop\bin\StoreLaptop.dll
+e:\Projects2\StoreLaptop\StoreLaptop\bin\StoreLaptop.pdb
+e:\Projects2\StoreLaptop\StoreLaptop\bin\Antlr3.Runtime.dll
+e:\Projects2\StoreLaptop\StoreLaptop\bin\Microsoft.Web.Infrastructure.dll
+e:\Projects2\StoreLaptop\StoreLaptop\bin\Newtonsoft.Json.dll
+e:\Projects2\StoreLaptop\StoreLaptop\bin\System.Web.Helpers.dll
+e:\Projects2\StoreLaptop\StoreLaptop\bin\System.Web.Mvc.dll
+e:\Projects2\StoreLaptop\StoreLaptop\bin\System.Web.Optimization.dll
+e:\Projects2\StoreLaptop\StoreLaptop\bin\System.Web.Razor.dll
+e:\Projects2\StoreLaptop\StoreLaptop\bin\System.Web.WebPages.Deployment.dll
+e:\Projects2\StoreLaptop\StoreLaptop\bin\System.Web.WebPages.dll
+e:\Projects2\StoreLaptop\StoreLaptop\bin\System.Web.WebPages.Razor.dll
+e:\Projects2\StoreLaptop\StoreLaptop\bin\WebGrease.dll
+e:\Projects2\StoreLaptop\StoreLaptop\bin\System.Web.Helpers.xml
+e:\Projects2\StoreLaptop\StoreLaptop\bin\System.Web.Mvc.xml
+e:\Projects2\StoreLaptop\StoreLaptop\bin\System.Web.Optimization.xml
+e:\Projects2\StoreLaptop\StoreLaptop\bin\System.Web.Razor.xml
+e:\Projects2\StoreLaptop\StoreLaptop\bin\System.Web.WebPages.xml
+e:\Projects2\StoreLaptop\StoreLaptop\bin\System.Web.WebPages.Deployment.xml
+e:\Projects2\StoreLaptop\StoreLaptop\bin\System.Web.WebPages.Razor.xml
+e:\Projects2\StoreLaptop\StoreLaptop\bin\Antlr3.Runtime.pdb
+e:\Projects2\StoreLaptop\StoreLaptop\bin\Newtonsoft.Json.xml
+e:\Projects2\StoreLaptop\StoreLaptop\obj\Debug\StoreLaptop.csprojResolveAssemblyReference.cache
+e:\Projects2\StoreLaptop\StoreLaptop\obj\Debug\StoreLaptop.dll
+e:\Projects2\StoreLaptop\StoreLaptop\obj\Debug\StoreLaptop.pdb
+e:\Projects2\StoreLaptop\StoreLaptop\bin\PagedList.dll
+e:\Projects2\StoreLaptop\StoreLaptop\bin\PagedList.Mvc.dll
+e:\Projects2\StoreLaptop\StoreLaptop\bin\PagedList.xml
+e:\Projects2\StoreLaptop\StoreLaptop\bin\PagedList.Mvc.xml
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\StoreLaptop.dll.config
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\StoreLaptop.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\StoreLaptop.pdb
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\Antlr3.Runtime.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\Newtonsoft.Json.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\PagedList.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\PagedList.Mvc.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\System.Web.Helpers.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\System.Web.Mvc.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\System.Web.Optimization.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\System.Web.Razor.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\System.Web.WebPages.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\System.Web.WebPages.Razor.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\WebGrease.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\PagedList.xml
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\PagedList.Mvc.xml
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\System.Web.Helpers.xml
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\System.Web.Mvc.xml
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\System.Web.Optimization.xml
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\System.Web.Razor.xml
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\System.Web.WebPages.xml
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\System.Web.WebPages.Razor.xml
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\Antlr3.Runtime.pdb
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\bin\Newtonsoft.Json.xml
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\obj\Debug\StoreLaptop.dll
+C:\Users\PhongCui\Documents\Visual Studio 2013\Projects\StoreLaptop-2015-12-16\StoreLaptop\StoreLaptop\obj\Debug\StoreLaptop.pdb

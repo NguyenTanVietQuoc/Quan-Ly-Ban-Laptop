@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyLaptop" Class="QuanLyLaptopDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=QUOC;Initial Catalog=QuanLyLaptop;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QuanLyLaptopConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ChungLoai" Member="ChungLoais">
+    <Type Name="ChungLoai">
+      <Column Name="idCL" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenCL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AnHien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThuTu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ChungLoai_LoaiSP" Member="LoaiSPs" AccessModifier="Internal" ThisKey="idCL" OtherKey="idCL" Type="LoaiSP" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SanPham" Member="SanPhams">
+    <Type Name="SanPham">
+      <Column Name="idSP" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Hinh" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="NgayDang" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TonKho" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLanMua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLanXem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AnHien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idLoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idHSX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SanPham_DonHangChiTiet" Member="DonHangChiTiets" AccessModifier="Internal" ThisKey="idSP" OtherKey="idSP" Type="DonHangChiTiet" />
+      <Association Name="HangSanXuat_SanPham" Member="HangSanXuat" AccessModifier="Internal" ThisKey="idHSX" OtherKey="idHSX" Type="HangSanXuat" IsForeignKey="true" />
+      <Association Name="LoaiSP_SanPham" Member="LoaiSP" AccessModifier="Internal" ThisKey="idLoai" OtherKey="idLoai" Type="LoaiSP" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DonHangChiTiet" Member="DonHangChiTiets">
+    <Type Name="DonHangChiTiet">
+      <Column Name="idDH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idSP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="SanPham_DonHangChiTiet" Member="SanPham" AccessModifier="Internal" ThisKey="idSP" OtherKey="idSP" Type="SanPham" IsForeignKey="true" />
+      <Association Name="DonHang_DonHangChiTiet" Member="DonHang" AccessModifier="Internal" ThisKey="idDH" OtherKey="idDH" Type="DonHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HangSanXuat" Member="HangSanXuats">
+    <Type Name="HangSanXuat">
+      <Column Name="idHSX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenHSX" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AnHien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HangSanXuat_SanPham" Member="SanPhams" AccessModifier="Internal" ThisKey="idHSX" OtherKey="idHSX" Type="SanPham" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Name="idKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="NgayDK" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KichHoat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="KhachHang_DonHang" Member="DonHangs" AccessModifier="Internal" ThisKey="idKH" OtherKey="idKH" Type="DonHang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiSP" Member="LoaiSPs">
+    <Type Name="LoaiSP">
+      <Column Name="idLoai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThuTu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AnHien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LoaiSP_SanPham" Member="SanPhams" AccessModifier="Internal" ThisKey="idLoai" OtherKey="idLoai" Type="SanPham" />
+      <Association Name="ChungLoai_LoaiSP" Member="ChungLoai" AccessModifier="Internal" ThisKey="idCL" OtherKey="idCL" Type="ChungLoai" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DonHang" Member="DonHangs">
+    <Type Name="DonHang">
+      <Column Name="idDH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ThoiGianDat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TenNguoiNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaDiemGiao" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NgayGiao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TinhTrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tongtien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DonHang_DonHangChiTiet" Member="DonHangChiTiets" AccessModifier="Internal" ThisKey="idDH" OtherKey="idDH" Type="DonHangChiTiet" />
+      <Association Name="KhachHang_DonHang" Member="KhachHang" AccessModifier="Internal" ThisKey="idKH" OtherKey="idKH" Type="KhachHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Admin" Member="Admins">
+    <Type Name="Admin">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaiKhoan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MatKhau" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
